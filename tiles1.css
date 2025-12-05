@@ -1,0 +1,288 @@
+/* ====== BASE RESET ====== */
+*{ box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; padding:0; margin:0; }
+html,body{ width:100%; height:100%; overflow-x:hidden; background: #fff; color: #222; }
+
+/* === NAVBAR === */
+nav{
+  width:100%;
+  background-color:#000;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:10px 16px;
+  gap:12px;
+  flex-wrap:wrap;  
+}
+
+.hamburger{ display:none; color:#fff; font-size:22px; cursor:pointer; margin-right:6px; }
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:#fff;
+  min-width:0; 
+}
+.logo img{ height:50px; width:50px; object-fit:cover; }
+.logo span{ color:#fff; font-size:30px; font-weight:700; line-height:1; display:inline-block; }
+.logo .span{ display:block; font-size:20px; color:#fff; margin-left:0; }
+
+/* searchbar */
+.searchbar{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  background:#fff;
+  padding:6px 10px;
+  border-radius:18px;
+  width:420px;
+  max-width:48%;
+}
+.searchbar input{
+  border:none; outline:none; flex:1; font-size:14px; min-width:0;
+}
+.searchbar i{ color:#333; font-size:18px; }
+
+/* top-right info */
+.info{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  color:#fff;
+  min-width:0;
+}
+.info p{ color:#fff; margin:0; font-size:14px; white-space:nowrap; }
+.menu{ color:#fff; font-size:14px; display:inline-block; white-space:nowrap; }
+
+/* ====== CATEGORY BAR ====== */
+.types{
+  width:100%;
+  background:rgb(54,54,54);
+  color:grey;
+  display:flex;
+  justify-content:space-evenly;
+  align-items:center;
+  padding:8px 6px;
+  gap:8px;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.types p{ flex:0 0 auto; padding:6px 8px; white-space:nowrap; font-size:16px; color:#ddd; }
+
+/* ====== HORIZONTAL IMAGES CAROUSEL ====== */
+.img{ display:flex; align-items:center; gap:8px; padding:16px 8px; justify-content:center; }
+.left-arrow, .right-arrow{
+  color:rgba(83,79,79,0.67);
+  font-size:26px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:8px;
+  cursor:pointer;
+  flex:0 0 auto;
+}
+
+.images{
+  display:flex;
+  gap:14px;
+  overflow-x:auto;
+  padding:6px 8px;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+  flex:1 1 auto;
+  align-items:center;
+  min-width:0;
+}
+/* each tile block */
+.images > div{ display:flex; flex-direction:column; align-items:center; text-align:center; gap:6px; flex:0 0 auto; width:150px; }
+.images img{ width:150px; height:150px; object-fit:cover; border-radius:10px; display:block; }
+
+/* hide scrollbar visually for modern browsers */
+.images::-webkit-scrollbar, .types::-webkit-scrollbar, .companies::-webkit-scrollbar{ height:8px; }
+.images::-webkit-scrollbar-thumb, .types::-webkit-scrollbar-thumb, .companies::-webkit-scrollbar-thumb{ background: rgba(0,0,0,0.15); border-radius:6px; }
+
+.top-bar {
+    width: 100%;
+    background: #f4c100;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.pincode-box input {
+    width: 300px;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    display: grid;
+    text-align: center;
+}
+
+
+.container {
+    width: 90%;
+    margin: auto;
+    padding: 25px 0;
+}
+/* ------------------------------
+   PAGE HEADER
+------------------------------ */
+.breadcrumb {
+    font-size: 14px;
+    color: #555;
+}
+
+.page-header__title {
+    font-size: 32px;
+    margin: 10px 0;
+}
+
+.page-header__desc {
+    color: #666;
+    max-width: 800px;
+}
+
+/* ------------------------------
+   LAYOUT WRAPPER
+------------------------------ */
+.layout {
+    margin-top: 30px;
+    display: flex;
+    gap: 30px;
+}
+
+/* ------------------------------
+   SIDEBAR FILTERS
+------------------------------ */
+.sidebar {
+    width: 25%;
+}
+
+.filter {
+    background: #f6f6f6;
+    padding: 18px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.filter__title {
+    margin-bottom: 12px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.filter__option {
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.filter__more {
+    font-size: 14px;
+    color: #0077dd;
+    text-decoration: none;
+}
+
+/* ------------------------------
+   MAIN CONTENT
+------------------------------ */
+.content {
+    width: 75%;
+}
+
+/* Category Buttons */
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.categories__btn {
+    padding: 12px 22px;
+    border-radius: 25px;
+    border: 1px solid #dcdcdc;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.categories__btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* ------------------------------
+   PRODUCT GRID
+------------------------------ */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.3s ease;
+    background: #fff;
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.product-card__img {
+    width: 100%;
+    display: block;
+}
+
+.product-card__title {
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+@media (max-width: 1024px){
+    .searchbar{ width:320px; max-width:60%; }
+    .logo span{ font-size:26px; }
+    .types p{ font-size:15px; padding:6px 10px; }}
+
+
+    @media (max-width:900px){
+        .info{ display:none; }            /* hide top-right icons on tablet */
+        .hamburger{ display:block; }     /* show hamburger */
+        .searchbar{ width:100%; max-width:100%; }
+        nav{ justify-content:space-between; }
+        .types{ display:none; }          /* hide types for small screens */
+        .images{ gap:10px; }
+        .layout {
+            flex-direction: column;
+        }
+    
+        .sidebar,
+        .main {
+            width: 100%;
+        }
+    }
+
+    
+
+        @media (max-width:600px){
+            nav{ padding:10px; }
+            .logo img{ height:28px; width:28px; }
+            .logo span{ font-size:18px; }
+            .searchbar{ height:36px; padding:6px 8px; }
+            .images > div{ width:120px; }
+            .images img{ width:120px; height:120px; }
+            .top-bar input {
+                width: 200px;
+            }
+        
+            .tile-category button {
+                width: 100%;
+            }
+        }
